@@ -1,0 +1,108 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* Design tokens */
+:root {
+  --bg: #ffffff;
+  --text: #111418;
+  --muted: #5b6776;
+  --accent: #3b82f6;
+  --card: #f6f8fa;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0,0,0,.06);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f14;
+    --text: #e8eef8;
+    --muted: #9aa7b5;
+    --accent: #60a5fa;
+    --card: #10161d;
+    --border: #1f2a37;
+    --shadow: 0 6px 24px rgba(0,0,0,.35);
+  }
+}
+
+/* explicit theme override via data attribute */
+html[data-theme="dark"] {
+  --bg: #0b0f14;
+  --text: #e8eef8;
+  --muted: #9aa7b5;
+  --accent: #60a5fa;
+  --card: #10161d;
+  --border: #1f2a37;
+  --shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+.section { padding: 4rem 0; }
+.section.alt { background: var(--card); }
+.prose p { color: var(--muted); }
+
+/* Header / Nav */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  backdrop-filter: saturate(180%) blur(6px);
+  background: color-mix(in hsl, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+.site-nav ul { display: flex; align-items: center; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.site-nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
+.site-nav a[aria-current="page"] { color: var(--text); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--border); padding: .4rem .6rem; border-radius: 8px; }
+
+.theme-toggle { border: 1px solid var(--border); background: var(--bg); padding: .35rem .6rem; border-radius: 999px; box-shadow: var(--shadow); }
+
+/* Mobile nav */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav { position: absolute; inset: 64px 0 auto 0; background: var(--bg); border-bottom: 1px solid var(--border); transform: translateY(-120%); transition: transform .2s ease; }
+  .site-nav.open { transform: translateY(0); }
+  .site-nav ul { flex-direction: column; align-items: flex-start; gap: .75rem; padding: 1rem; }
+}
+
+/* Hero */
+.hero h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 .75rem; }
+.lede { font-size: 1.125rem; color: var(--muted); }
+.cta-row { display: flex; gap: .75rem; margin-top: 1rem; }
+
+/* Buttons */
+.btn { display: inline-block; padding: .7rem 1rem; border-radius: 10px; text-decoration: none; color: white; background: var(--accent); font-weight: 700; }
+.btn:hover { filter: brightness(1.05); }
+.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+
+/* Cards grid */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.card-body { padding: 1rem; }
+.card h3 { margin: 0 0 .25rem; }
+.card p { margin: 0 0 .75rem; color: var(--muted); }
+.links { display: flex; gap: .75rem; }
+.links a { text-decoration: none; font-weight: 700; color: var(--accent); }
+
+/* Footer */
+.site-footer { padding: 2rem 0; border-top: 1px solid var(--border); }
+.small { font-size: .9rem; color: var(--muted); }
+
+/* Accessibility */
+.skip-link {
+  position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: var(--accent); color: #fff; border-radius: 6px; }
