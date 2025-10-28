@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio, projects, and contact information for Your Name." />
+  <link rel="canonical" href="https://YOUR-USERNAME.github.io/" />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Projects, writing, and ways to get in touch." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/" />
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Your Name</a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about" aria-current="page">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="section hero">
+      <div class="container">
+        <h1>Hi, I’m <span class="accent">Your Name</span>.</h1>
+        <p class="lede">I build things for the web — focusing on clean UX, reliable performance, and thoughtful details.</p>
+        <div class="cta-row">
+          <a class="btn" href="#projects">See my work</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container prose">
+        <h2>About</h2>
+        <p>Short bio — what you do, what you enjoy, and what you’re looking for. Keep it friendly and specific.</p>
+        <p>Currently interested in web platforms, developer experience, and applied AI on the front‑end.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <img src="assets/img/project1.jpg" alt="Screenshot of Project One" loading="lazy" />
+            <div class="card-body">
+              <h3>Project One</h3>
+              <p>One‑sentence description of what it does and why it’s useful.</p>
+              <div class="links">
+                <a href="https://github.com/YOUR-USERNAME/project-one">Code</a>
+                <a href="https://example.com/project-one">Live</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/project2.jpg" alt="Screenshot of Project Two" loading="lazy" />
+            <div class="card-body">
+              <h3>Project Two</h3>
+              <p>Highlight a result: speedup, users, or a cool feature.</p>
+              <div class="links">
+                <a href="https://github.com/YOUR-USERNAME/project-two">Code</a>
+                <a href="https://example.com/project-two">Live</a>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/project3.jpg" alt="Screenshot of Project Three" loading="lazy" />
+            <div class="card-body">
+              <h3>Project Three</h3>
+              <p>Brief context and tech used.</p>
+              <div class="links">
+                <a href="https://github.com/YOUR-USERNAME/project-three">Code</a>
+                <a href="https://example.com/project-three">Live</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Want to collaborate or have a question? Email me at
+          <a href="mailto:you@example.com">you@example.com</a>
+          or find me on <a href="https://www.linkedin.com/">LinkedIn</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">
+      <p>© <span id="year"></span> Your Name. Built with HTML &amp; CSS, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
